@@ -15,14 +15,15 @@ let scrollSpeed = 0.3; // Moderate scrolling speed
 let isGenerationActive = false;
 let lastGenerationTime = 0;
 const generationInterval = 120000; // 120 seconds (2 minutes) in milliseconds
-let selectedLanguage = 1; // 1=English, 2=Spanish, 3=French, 4=German, 5=Portuguese
+let selectedLanguage = 1; // 1=English, 2=Spanish, 3=French, 4=German, 5=Portuguese, 6=Turkish
 
 const languages = {
   1: { name: "English", code: "en" },
   2: { name: "Spanish", code: "es" },
   3: { name: "French", code: "fr" },
   4: { name: "German", code: "de" },
-  5: { name: "Portuguese", code: "pt" }
+  5: { name: "Portuguese", code: "pt" },
+  6: { name: "Turkish", code: "tr" }
 };
 
 const sketch = p => {
@@ -71,6 +72,9 @@ const sketch = p => {
       startGeneration();
     } else if (p.key === '5') { // Key 5: Portuguese
       selectedLanguage = 5;
+      startGeneration();
+    } else if (p.key === '6') { // Key 6: Turkish
+      selectedLanguage = 6;
       startGeneration();
     }
   };
@@ -168,9 +172,10 @@ const sketch = p => {
       p.text("3 - Français", p.width / 2, yPos + 50);
       p.text("4 - Deutsch", p.width / 2, yPos + 75);
       p.text("5 - Português", p.width / 2, yPos + 100);
+      p.text("6 - Türkçe", p.width / 2, yPos + 125);
       
       p.textSize(18);
-      p.text("Press number key to start generation | Press P for music", p.width / 2, yPos + 140);
+      p.text("Press number key to start generation | Press P for music", p.width / 2, yPos + 165);
       p.textSize(24); // Reset text size
     }
   }

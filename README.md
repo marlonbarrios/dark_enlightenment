@@ -1,12 +1,11 @@
 # Dark Enlightenment Scroll
-![Screenshot 2024-02-21 at 10 45 43 PM](https://github.com/marlonbarrios/entropic_haiku/assets/90220317/74303025-f5ad-4a1f-b4fa-28ab21ae83c3)
+
 
 
 ## Dark Enlightenment Scroll | Poetic-Critical Text Generator
 **Powered by GPT-4 and designed in p5.js**  
 *Concept, programming, and sound design by Marlon Barrios Solano*
 
-![Screenshot 2024-02-21 at 10 49 12 PM](https://github.com/marlonbarrios/entropic_haiku/assets/90220317/e0871208-0b04-48c1-8c65-6e5c688a89f4)
 
 Dark Enlightenment Scroll is a generative poetic-critical text installation that uses GPT-4 to create manifesto-like texts exploring the intersection of technology, ideology, and power. This unique project leverages OpenAI's GPT-4 model, integrated into a creative p5.js environment to produce a continuous scrolling text experience. The generated texts draw on cybernetics, post-democracy philosophies, surveillance capitalism, and techno-poetics, creating an unsettling critique of contemporary digital power structures. The app is fully responsive and designed for installation environments.
 
@@ -14,9 +13,9 @@ Dark Enlightenment Scroll is a generative poetic-critical text installation that
 - **Enhanced Readability**: Significantly increased font sizes throughout the application for better accessibility and viewing experience
 - **Improved Typography**: Enhanced text scaling for both HTML interface and p5.js canvas elements
 - **Responsive Design**: Maintained full responsiveness while improving readability across all device sizes
-- **Multi-language Support**: Full support for English, Spanish, French, German, and Portuguese text generation
+- **Multi-language Support**: Full support for English, Spanish, French, German, Portuguese, and Turkish text generation
 
-https://github.com/marlonbarrios/entropic_haiku/assets/90220317/45c1ba2c-4369-4af7-aa12-041fff143579
+
 
 ## Duet in Latent Space
 
@@ -32,7 +31,7 @@ The intention to perform actions in latent space, especially with a model, is to
 ## Features
 
 ### 🎨 Core Functionality
-- **Multilingual Text Generation**: Support for 5 languages (English, Spanish, French, German, Portuguese) with GPT-4 powered content
+- **Multilingual Text Generation**: Support for 6 languages (English, Spanish, French, German, Portuguese, Turkish) with GPT-4 powered content
 - **Continuous Scrolling Experience**: Mesmerizing, endless vertical text scroll creating an immersive reading experience
 - **Automatic Content Refresh**: New poetic-critical texts generated every 2 minutes for continuous evolution
 - **Enhanced Typography**: Significantly improved font sizes and readability across all interface elements
@@ -100,19 +99,20 @@ The intention to perform actions in latent space, especially with a model, is to
 ## How to Use
 
 ### 🎯 Getting Started
-1. **Select Language**: Press number keys 1-5 to choose your preferred language:
+1. **Select Language**: Press number keys 1-6 to choose your preferred language:
    - **1** - English
    - **2** - Español (Spanish)
    - **3** - Français (French)
    - **4** - Deutsch (German)
    - **5** - Português (Portuguese)
+   - **6** - Türkçe (Turkish)
 
 2. **Text Generation**: Once a language is selected, the system automatically generates new poetic-critical texts every 2 minutes
 
 3. **Audio Experience**: Press **'P'** to play or stop the ambient sound
 
 ### 🎮 Interactive Controls
-- **Language Selection**: Number keys (1-5) to switch languages and trigger new text generation
+- **Language Selection**: Number keys (1-6) to switch languages and trigger new text generation
 - **Manual Generation**: Spacebar to start the automatic generation cycle
 - **Audio Toggle**: 'P' key to control background sound
 - **Continuous Experience**: Texts scroll continuously in a mesmerizing, endless feed
