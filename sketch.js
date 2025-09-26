@@ -35,8 +35,8 @@ const sketch = p => {
     p.createCanvas(p.windowWidth, p.windowHeight);
     p.fill(255); // White text
     p.textAlign(p.CENTER, p.CENTER);
-    p.textSize(20);
-    p.textLeading(30);
+    p.textSize(24);
+    p.textLeading(36);
     p.noCursor(); // Hide cursor
     scrollY = p.height; // Start text at bottom of screen
   };
@@ -143,9 +143,9 @@ const sketch = p => {
       
       // Reset scroll when text goes completely off screen (but keep scrolling)
       // Estimate text height based on character count and line wrapping (responsive)
-      let charsPerLine = Math.floor(textWidth / 12); // Approximate chars per line based on width
+      let charsPerLine = Math.floor(textWidth / 14); // Approximate chars per line based on width (adjusted for larger text)
       let lines = Math.ceil(textToShow.length / charsPerLine);
-      let estimatedTextHeight = lines * 30; // 30 is text leading
+      let estimatedTextHeight = lines * 36; // 36 is text leading
       if (scrollY < -estimatedTextHeight) {
         scrollY = p.height + 100; // Add some gap before restarting
       }
@@ -155,13 +155,13 @@ const sketch = p => {
     if (!isGenerationActive) {
       p.fill(255);
       p.textAlign(p.CENTER, p.CENTER);
-      p.textSize(28);
+      p.textSize(40);
       p.text("Dark Enlightenment Scroll", p.width / 2, p.height / 2 - 80);
       
-      p.textSize(18);
+      p.textSize(26);
       p.text("Select Language to Begin:", p.width / 2, p.height / 2 - 30);
       
-      p.textSize(16);
+      p.textSize(22);
       let yPos = p.height / 2 + 10;
       p.text("1 - English", p.width / 2, yPos);
       p.text("2 - Español", p.width / 2, yPos + 25);
@@ -169,9 +169,9 @@ const sketch = p => {
       p.text("4 - Deutsch", p.width / 2, yPos + 75);
       p.text("5 - Português", p.width / 2, yPos + 100);
       
-      p.textSize(14);
+      p.textSize(18);
       p.text("Press number key to start generation | Press P for music", p.width / 2, yPos + 140);
-      p.textSize(20); // Reset text size
+      p.textSize(24); // Reset text size
     }
   }
 };

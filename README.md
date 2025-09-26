@@ -2,13 +2,19 @@
 ![Screenshot 2024-02-21 at 10 45 43 PM](https://github.com/marlonbarrios/entropic_haiku/assets/90220317/74303025-f5ad-4a1f-b4fa-28ab21ae83c3)
 
 
-Dark Enlightenment Scroll | Poetic-Critical Text Generator
-Powered by GPT-4 and designed in p5.js
-concept, programming, sound design by marlon barrios solano
+## Dark Enlightenment Scroll | Poetic-Critical Text Generator
+**Powered by GPT-4 and designed in p5.js**  
+*Concept, programming, and sound design by Marlon Barrios Solano*
 
 ![Screenshot 2024-02-21 at 10 49 12 PM](https://github.com/marlonbarrios/entropic_haiku/assets/90220317/e0871208-0b04-48c1-8c65-6e5c688a89f4)
 
 Dark Enlightenment Scroll is a generative poetic-critical text installation that uses GPT-4 to create manifesto-like texts exploring the intersection of technology, ideology, and power. This unique project leverages OpenAI's GPT-4 model, integrated into a creative p5.js environment to produce a continuous scrolling text experience. The generated texts draw on cybernetics, post-democracy philosophies, surveillance capitalism, and techno-poetics, creating an unsettling critique of contemporary digital power structures. The app is fully responsive and designed for installation environments.
+
+### ✨ Recent Updates
+- **Enhanced Readability**: Significantly increased font sizes throughout the application for better accessibility and viewing experience
+- **Improved Typography**: Enhanced text scaling for both HTML interface and p5.js canvas elements
+- **Responsive Design**: Maintained full responsiveness while improving readability across all device sizes
+- **Multi-language Support**: Full support for English, Spanish, French, German, and Portuguese text generation
 
 https://github.com/marlonbarrios/entropic_haiku/assets/90220317/45c1ba2c-4369-4af7-aa12-041fff143579
 
@@ -25,33 +31,91 @@ The intention to perform actions in latent space, especially with a model, is to
 
 ## Features
 
-- **Dynamic Letter Animation:** Letters dynamically fall and settle on the bottom of the screen, with physics-based animations including gravity, bounce, and friction effects.
-- **Interactive Control:** Users can interact with the visualization by moving their mouse to generate new letters and drag settled letters around the screen.
-- **Text Generation:** Integrates with OpenAI's GPT-4 to generate text based on a wide array of prompts, showcasing the model's ability to understand and create content based on complex themes.
-- **Sound Interaction:** Plays a sample sound when a specific key is pressed, adding an auditory dimension to the interaction.
-- **Growing Lines:** A visual effect where lines grow towards the falling letters, starting from a random position at the top of the screen.
-- **Generative Poetic-Critical Texts with GPT-4:** Press the Spacebar to start automatic generation of poetic-critical texts every minute. The texts explore technology, ideology, and power through experimental manifesto-liturgy style.
-- **Interactive Entropy:** Move your mouse across the canvas to increase the entropy, creating a dynamic and ever-changing poetic landscape.
+### 🎨 Core Functionality
+- **Multilingual Text Generation**: Support for 5 languages (English, Spanish, French, German, Portuguese) with GPT-4 powered content
+- **Continuous Scrolling Experience**: Mesmerizing, endless vertical text scroll creating an immersive reading experience
+- **Automatic Content Refresh**: New poetic-critical texts generated every 2 minutes for continuous evolution
+- **Enhanced Typography**: Significantly improved font sizes and readability across all interface elements
+
+### 🔧 Technical Features
+- **GPT-4 Integration**: Advanced AI-powered text generation exploring complex themes of technology, ideology, and power
+- **Responsive Design**: Fully adaptive interface that works seamlessly across all device sizes
+- **Audio Integration**: Ambient sound design to enhance the immersive experience
+- **Real-time Interaction**: Instant language switching and manual text generation triggers
+
+### 🎭 Artistic Elements
+- **Manifesto-Liturgy Style**: Experimental text format oscillating between critique and poetry
+- **Critical Theory Integration**: Draws on cybernetics, post-democracy, surveillance capitalism, and techno-poetics
+- **Installation Ready**: Designed for both personal exploration and exhibition environments
 
 ## Setup
 
-- **Prerequisites:** Ensure you have Node.js installed on your machine to run this project.
-- **Installation:** Clone the repository, then install dependencies using `npm install`.
-- **Configuration:** Set your OpenAI API key in your project's environment variables as `VITE_OPENAI_KEY`.
-- **Running the Project:** Start the project by running `npm run start` and open it in your web browser.
+### 📋 Prerequisites
+- **Node.js**: Version 16 or later (recommended)
+- **OpenAI API Key**: Valid OpenAI account with API access
+
+### 🚀 Installation
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/marlonbarrios/entropic_haiku-mondrian2.git
+   cd entropic_haiku-mondrian2
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment**:
+   - Create a `.env` file in the project root
+   - Add your OpenAI API key:
+     ```
+     VITE_OPENAI_KEY=your_openai_api_key_here
+     ```
+
+4. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+5. **Open in browser**: Navigate to `http://localhost:5173/` to experience the application
 
 ## Technologies Used
 
-- **p5.js:** A client-side library for creative coding, used for drawing and animating the letters and lines.
-- **OpenAI JavaScript SDK:** Used for integrating the OpenAI GPT-4 model to dynamically generate text based on user-defined prompts.
-- **CSS:** For basic styling of the webpage.
+### 🎨 Frontend & Creative Coding
+- **p5.js**: Client-side creative coding library for canvas-based text rendering and animations
+- **HTML5**: Semantic markup with responsive design principles
+- **CSS3**: Modern styling with system fonts and responsive typography
+
+### 🤖 AI & Backend
+- **OpenAI GPT-4**: Advanced language model for generating poetic-critical content
+- **OpenAI JavaScript SDK**: Direct browser-based integration with OpenAI's API
+- **Vite**: Modern build tool and development server for optimal performance
+
+### 🔧 Development & Deployment
+- **Node.js**: Runtime environment for development tooling
+- **Environment Variables**: Secure API key management
+- **Vercel**: Cloud deployment platform for live application hosting
 
 ## How to Use
 
-- **Generating Letters:** Move your mouse across the screen to generate falling letters.
-- **Interacting with Letters:** Click and drag settled letters to move them around.
-- **Playing Sound:** Press the 'P' key to play or stop the sample sound.
-- **Generating Text with OpenAI:** Press the spacebar to trigger a prompt to OpenAI's GPT-4 (configured in the code), and watch as the generated text animates on the screen.
+### 🎯 Getting Started
+1. **Select Language**: Press number keys 1-5 to choose your preferred language:
+   - **1** - English
+   - **2** - Español (Spanish)
+   - **3** - Français (French)
+   - **4** - Deutsch (German)
+   - **5** - Português (Portuguese)
+
+2. **Text Generation**: Once a language is selected, the system automatically generates new poetic-critical texts every 2 minutes
+
+3. **Audio Experience**: Press **'P'** to play or stop the ambient sound
+
+### 🎮 Interactive Controls
+- **Language Selection**: Number keys (1-5) to switch languages and trigger new text generation
+- **Manual Generation**: Spacebar to start the automatic generation cycle
+- **Audio Toggle**: 'P' key to control background sound
+- **Continuous Experience**: Texts scroll continuously in a mesmerizing, endless feed
 
 ## Customization
 
