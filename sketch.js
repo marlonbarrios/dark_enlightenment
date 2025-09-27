@@ -36,8 +36,7 @@ const sketch = p => {
     p.createCanvas(p.windowWidth, p.windowHeight);
     p.fill(255); // White text
     p.textAlign(p.CENTER, p.CENTER);
-    p.textSize(24);
-    p.textLeading(36);
+    // Text size will be set dynamically in draw function
     p.noCursor(); // Hide cursor
     scrollY = p.height; // Start text at bottom of screen
   };
@@ -138,18 +137,26 @@ const sketch = p => {
       // Update scroll position - continuous scrolling
       scrollY -= scrollSpeed;
       
-      // Draw scrolling text - responsive to window width
+      // Draw scrolling text - fully responsive to window width
       p.fill(255); // White text
       p.textAlign(p.CENTER, p.TOP);
-      let textWidth = Math.min(800, p.width * 0.8); // Use 80% of window width, max 800px
+      let textWidth = p.width * 0.8; // Always use 80% of window width, no maximum limit
       let textX = (p.width - textWidth) / 2; // Center the text
+      
+      // Make text size responsive to window size
+      let responsiveTextSize = Math.max(16, Math.min(32, p.width / 40)); // Scale text size with window width
+      p.textSize(responsiveTextSize);
+      let responsiveLeading = responsiveTextSize * 1.5; // Line height proportional to text size
+      p.textLeading(responsiveLeading);
+      
       p.text(textToShow, textX, scrollY, textWidth);
       
       // Reset scroll when text goes completely off screen (but keep scrolling)
-      // Estimate text height based on character count and line wrapping (responsive)
-      let charsPerLine = Math.floor(textWidth / 14); // Approximate chars per line based on width (adjusted for larger text)
+      // Estimate text height based on character count and line wrapping (fully responsive)
+      let avgCharWidth = responsiveTextSize * 0.6; // Approximate character width
+      let charsPerLine = Math.floor(textWidth / avgCharWidth);
       let lines = Math.ceil(textToShow.length / charsPerLine);
-      let estimatedTextHeight = lines * 36; // 36 is text leading
+      let estimatedTextHeight = lines * responsiveLeading;
       if (scrollY < -estimatedTextHeight) {
         scrollY = p.height + 100; // Add some gap before restarting
       }
@@ -159,24 +166,31 @@ const sketch = p => {
     if (!isGenerationActive) {
       p.fill(255);
       p.textAlign(p.CENTER, p.CENTER);
-      p.textSize(40);
-      p.text("Dark Enlightenment Scroll", p.width / 2, p.height / 2 - 80);
       
-      p.textSize(26);
-      p.text("Select Language to Begin:", p.width / 2, p.height / 2 - 30);
+      // Responsive text sizes for instructions
+      let titleSize = Math.max(24, Math.min(48, p.width / 30));
+      let subtitleSize = Math.max(18, Math.min(32, p.width / 40));
+      let menuSize = Math.max(16, Math.min(28, p.width / 45));
+      let instructionSize = Math.max(14, Math.min(22, p.width / 55));
       
-      p.textSize(22);
-      let yPos = p.height / 2 + 10;
+      p.textSize(titleSize);
+      p.text("Dark Enlightenment Scroll", p.width / 2, p.height / 2 - titleSize * 2);
+      
+      p.textSize(subtitleSize);
+      p.text("Select Language to Begin:", p.width / 2, p.height / 2 - subtitleSize);
+      
+      p.textSize(menuSize);
+      let yPos = p.height / 2 + menuSize / 2;
+      let lineSpacing = menuSize * 1.2;
       p.text("1 - English", p.width / 2, yPos);
-      p.text("2 - Español", p.width / 2, yPos + 25);
-      p.text("3 - Français", p.width / 2, yPos + 50);
-      p.text("4 - Deutsch", p.width / 2, yPos + 75);
-      p.text("5 - Português", p.width / 2, yPos + 100);
-      p.text("6 - Türkçe", p.width / 2, yPos + 125);
+      p.text("2 - Español", p.width / 2, yPos + lineSpacing);
+      p.text("3 - Français", p.width / 2, yPos + lineSpacing * 2);
+      p.text("4 - Deutsch", p.width / 2, yPos + lineSpacing * 3);
+      p.text("5 - Português", p.width / 2, yPos + lineSpacing * 4);
+      p.text("6 - Türkçe", p.width / 2, yPos + lineSpacing * 5);
       
-      p.textSize(18);
-      p.text("Press number key to start generation | Press P for music", p.width / 2, yPos + 165);
-      p.textSize(24); // Reset text size
+      p.textSize(instructionSize);
+      p.text("Press number key to start generation | Press P for music", p.width / 2, yPos + lineSpacing * 6.5);
     }
   }
 };
@@ -217,8 +231,7 @@ function onReady() {
     dangerouslyAllowBrowser: true
   });
 
-  const mainElt = document.querySelector('main');
-  new p5(sketch, mainElt);
+  new p5(sketch);
 }
 
 if (document.readyState === 'complete') {

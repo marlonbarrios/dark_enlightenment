@@ -1,9 +1,7 @@
-/* Centering the canvas inside the main element */
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full height of the viewport */
+/* Reset body margins and ensure full viewport coverage */
+body {
+  margin: 0;
+  padding: 0;
   overflow: hidden; /* Hide overflow */
 }
 
