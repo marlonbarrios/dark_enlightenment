@@ -7,13 +7,13 @@
 ## Screenshots
 
 ### Language Selection Interface
-![Language Selection](./public/Screenshot%202025-09-27%20at%2012.59.45%20PM.png)
+![Language Selection](./public/language-selection.png)
 
 ### Text Generation in Progress
-![Text Generation](./public/Screenshot%202025-09-27%20at%2012.59.53%20PM.png)
+![Text Generation](./public/text-generation.png)
 
 ### Full Screen Text Display
-![Full Screen Display](./public/Screenshot%202025-09-27%20at%201.00.53%20PM.png)
+![Full Screen Display](./public/fullscreen-display.png)
 
 ## Overview
 
