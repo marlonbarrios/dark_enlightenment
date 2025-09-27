@@ -5,8 +5,7 @@ const openAIKey = import.meta.env.VITE_OPENAI_KEY;
 
 let openai;
 let isLoading = false;
-let sampleSound; // Declare the variable for the sound
-let isSoundPlaying = false; // Track the playing state
+// Audio functionality removed - no sound file needed
 
 let textToShow = "";
 
@@ -27,10 +26,7 @@ const languages = {
 };
 
 const sketch = p => {
-  p.preload = function() {
-    // Preload the sound
-    sampleSound = p.loadSound('/sample.mp3'); // Adjust path as necessary
-  };
+  // No preload needed - audio functionality removed
 
   p.setup = function() {
     p.createCanvas(p.windowWidth, p.windowHeight);
@@ -47,15 +43,7 @@ const sketch = p => {
   };
 
   p.keyPressed = function() {
-    if (p.keyCode === 80) { // Keycode for 'P'
-      if (!isSoundPlaying) {
-        sampleSound.play();
-        isSoundPlaying = true;
-      } else {
-        sampleSound.stop();
-        isSoundPlaying = false;
-      }
-    } else if (p.keyCode === 32) { // Space key to start automatic generation
+    if (p.keyCode === 32) { // Space key to start automatic generation
       startGeneration();
     } else if (p.key === '1') { // Key 1: English
       selectedLanguage = 1;
@@ -190,7 +178,7 @@ const sketch = p => {
       p.text("6 - Türkçe", p.width / 2, yPos + lineSpacing * 5);
       
       p.textSize(instructionSize);
-      p.text("Press number key to start generation | Press P for music", p.width / 2, yPos + lineSpacing * 6.5);
+      p.text("Press number key to start generation", p.width / 2, yPos + lineSpacing * 6.5);
     }
   }
 };
