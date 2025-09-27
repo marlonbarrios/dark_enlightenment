@@ -19,6 +19,8 @@
 
 Dark Enlightenment Scroll is an experimental, AI-powered text generation and visualization application that creates poetic-critical texts exploring the intersection of technology, ideology, and power in speculative, synthetic worlds. The application generates unique, continuously scrolling manifestos that oscillate between critique and poetry, presented as an immersive full-screen canvas experience.
 
+**This application serves as a digital complement to a larger synthetic video and music installation**, extending the artistic experience beyond physical exhibition spaces into interactive, web-based environments. The text generation component works in dialogue with the broader multimedia installation, creating a networked ecosystem of AI-generated content that spans multiple media formats and platforms.
+
 ## Concept & Vision
 
 This project critiques the confluence of:
@@ -154,6 +156,8 @@ npm run build
 Dark Enlightenment Scroll operates as a digital séance, channeling the ghosts of failed utopias and emerging dystopias through algorithmic mediation. Each generated text serves as both archaeological artifact and prophetic vision, excavating the buried logics of our technological present while imagining alternative futures.
 
 The application transforms the browser into a ritual space where viewers encounter machine-generated liturgies that expose the entangled relationships between computation, ideology, and power. Through its multilingual capacity, it acknowledges the global scope of technological colonization while offering spaces for linguistic and cultural resistance.
+
+**As part of a broader synthetic video and music installation ecosystem**, this web application extends the critical discourse beyond gallery walls, creating distributed nodes of algorithmic reflection that can be accessed globally. The text component dialogues with video synthesis and generative music, forming a triadic media installation that interrogates the boundaries between human creativity and machine intelligence across multiple sensory and cognitive registers.
 
 ## Credits
 
