@@ -5,16 +5,19 @@ const openAIKey = import.meta.env.VITE_OPENAI_KEY;
 
 let openai;
 let isLoading = false;
-// Audio functionality removed - no sound file needed
+let sampleSound; // Declare the variable for the sound
+let isSoundPlaying = false; // Track the playing state
 
 let textToShow = "";
 
 let scrollY = 0;
-let scrollSpeed = 0.3; // Moderate scrolling speed
+let scrollSpeed = 0.36; // Increased by 20% for better performance on slower computers
 let isGenerationActive = false;
 let lastGenerationTime = 0;
-const generationInterval = 120000; // 120 seconds (2 minutes) in milliseconds
-let selectedLanguage = 1; // 1=English, 2=Spanish, 3=French, 4=German, 5=Portuguese, 6=Turkish
+const generationInterval = 60000; // 60 seconds (1 minute) in milliseconds
+let selectedLanguage = 1; // 1=English, 2=Spanish, 4=German - auto-rotating
+let languageRotation = [1, 2, 4]; // English, Spanish, German
+let currentLanguageIndex = 0;
 
 const languages = {
   1: { name: "English", code: "en" },
@@ -26,7 +29,10 @@ const languages = {
 };
 
 const sketch = p => {
-  // No preload needed - audio functionality removed
+  p.preload = function() {
+    // Preload the sound from public folder
+    sampleSound = p.loadSound('/Dark.wav'); // Load Dark.wav from public folder
+  };
 
   p.setup = function() {
     p.createCanvas(p.windowWidth, p.windowHeight);
@@ -43,7 +49,15 @@ const sketch = p => {
   };
 
   p.keyPressed = function() {
-    if (p.keyCode === 32) { // Space key to start automatic generation
+    if (p.keyCode === 80) { // Keycode for 'P'
+      if (!isSoundPlaying) {
+        sampleSound.loop(); // Loop the audio continuously
+        isSoundPlaying = true;
+      } else {
+        sampleSound.stop();
+        isSoundPlaying = false;
+      }
+    } else if (p.keyCode === 32) { // Space key to start automatic generation
       startGeneration();
     } else if (p.key === '1') { // Key 1: English
       selectedLanguage = 1;
@@ -85,7 +99,7 @@ const sketch = p => {
       let timestamp = Date.now();
       let randomSeed = Math.floor(Math.random() * 1000000);
       
-      chat(`[${timestamp}-${randomSeed}] Generate a completely new and unique poetic-critical text that explores the intersection of technology, ideology, and power in a speculative, synthetic world. Draw on references to cybernetics (such as Project Cybersyn), post-democracy and Dark Enlightenment philosophies (Mencius Moldbug, Nick Bostrom's Singleton), the histories of colonialism and eugenics (Francis Galton, 'good genes'), and the logics of surveillance capitalism (Palantir, attention economies, influencer culture). Use a tone that moves between manifesto, liturgy, and techno-poetics, mixing academic analysis with lyrical, fractured imagery. The text should evoke aesthetics from German techno, Bauhaus modernism, Warholian pop, and surreal performance art. Include metaphors of hybridity, nomadic selves, migration, and fractured anatomies, where bodies, territories, and identities are constantly shifting under algorithmic regimes. Present the work as if it were part of an AI-generated media installation that critiques the confluence of Christian nationalism, white-supremacist fantasy, corporate techno-utopias, and the weaponization of faith, while also imagining new forms of solidarity, rupture, and epistemic resistance. The style should be experimental, recursive, and unsettling — a manifesto-song or ritual text that oscillates between critique and poetry. Generate this text ONLY in ${languageName}. Create a completely original and distinct variation - do not repeat previous generations. Write it as a complete, cohesive text in ${languageName}.`);
+      chat(`[${timestamp}-${randomSeed}] Generate a very short poetic-critical text (maximum 2 brief paragraphs) exploring how cybernetics and Bostrom's Singleton concept relate to techno-theocratic power structures and the Technical Republic. Connect Francis Galton's eugenics legacy to contemporary white supremacist ideologies embedded in surveillance capitalism. Reference the Treaty of Westphalia and how cartography centers European dominance - maps drawn from the imperial center. Invoke the "We Came to Rule" mentality of Eurocentric royal power and how colonial philosophy creates multi-territorial control through memory and distance from nations. Explore Project Cybersyn, Palantir, and algorithmic regimes as extensions of colonial cartographic control. Use a tone mixing manifesto, liturgy, and techno-poetics with fractured imagery from German techno, Bauhaus, and Warholian aesthetics. Present as AI-generated critique of Christian nationalism, corporate techno-utopias, and weaponized faith, while imagining epistemic resistance. Style should be experimental and unsettling. Generate ONLY in ${languageName}. Create completely original variation. Keep extremely concise - maximum 2 brief paragraphs only.`);
     }
   }
  
@@ -114,8 +128,11 @@ const sketch = p => {
   p.draw = function() {
     p.background(0); // Black background
 
-    // Check if it's time to generate new text (only if generation is active)
+    // Check if it's time to generate new text and rotate language (only if generation is active)
     if (isGenerationActive && !isLoading && (p.millis() - lastGenerationTime) > generationInterval) {
+      // Rotate to next language
+      currentLanguageIndex = (currentLanguageIndex + 1) % languageRotation.length;
+      selectedLanguage = languageRotation[currentLanguageIndex];
       generateNewText();
     }
 
@@ -178,7 +195,7 @@ const sketch = p => {
       p.text("6 - Türkçe", p.width / 2, yPos + lineSpacing * 5);
       
       p.textSize(instructionSize);
-      p.text("Press number key to start generation", p.width / 2, yPos + lineSpacing * 6.5);
+      p.text("Press number key to start generation | Press P for music", p.width / 2, yPos + lineSpacing * 6.5);
     }
   }
 };

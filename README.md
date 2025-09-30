@@ -24,24 +24,23 @@ Dark Enlightenment Scroll is an experimental, AI-powered text generation and vis
 ## Concept & Vision
 
 This project critiques the confluence of:
-- **Cybernetics** (Project Cybersyn)
-- **Post-democracy and Dark Enlightenment philosophies** (Mencius Moldbug, Nick Bostrom's Singleton)
-- **Colonial and eugenic histories** (Francis Galton, 'good genes')
-- **Surveillance capitalism** (Palantir, attention economies, influencer culture)
-- **Christian nationalism and white-supremacist fantasy**
-- **Corporate techno-utopias**
+- **Cybernetics and Singleton theory** → techno-theocratic power structures
+- **Technical Republic** concepts and algorithmic governance
+- **Francis Galton's eugenics legacy** → contemporary white supremacist surveillance capitalism
+- **Treaty of Westphalia** → cartographic European dominance from imperial centers
+- **"We Came to Rule" mentality** → Eurocentric royal power in digital systems
+- **Multi-territorial colonial philosophy** → memory and distance as tools of control
+- **Project Cybersyn & Palantir** → algorithmic extensions of colonial cartographic control
 
 The generated texts imagine new forms of solidarity, rupture, and epistemic resistance while exploring themes of hybridity, nomadic selves, migration, and fractured anatomies under algorithmic regimes.
 
 ## Features
 
-### 🌍 Multi-Language Support
-- **English** (Press `1`)
-- **Español** (Press `2`) 
-- **Français** (Press `3`)
-- **Deutsch** (Press `4`)
-- **Português** (Press `5`)
-- **Türkçe** (Press `6`)
+### 🌍 Auto-Rotating Language Support
+- **Automatic rotation** through 3 languages every minute:
+  - **English** → **Español** → **Deutsch** → (repeat)
+- **Manual selection** available (Press `1-6` for any language)
+- **Continuous generation** with language switching
 
 ### 🎨 Visual Experience
 - **Full-screen immersive canvas** with no HTML interface
@@ -56,7 +55,9 @@ The generated texts imagine new forms of solidarity, rupture, and epistemic resi
 
 ### 🤖 AI Text Generation
 - **GPT-4 powered** unique text generation
-- **Automatic regeneration** every 2 minutes during active sessions
+- **Automatic regeneration** every 1 minute with language rotation
+- **Concise format** - maximum 2 brief paragraphs per generation
+- **Enhanced thematic focus** on cybernetics, Singleton theory, eugenics, and colonial cartography
 - **Temperature-controlled creativity** for varied outputs
 - **Timestamp and randomization** to ensure unique generations
 
@@ -90,22 +91,23 @@ let responsiveLeading = responsiveTextSize * 1.5;
 
 ### Getting Started
 1. Visit the [live application](https://dark-enlightenment.vercel.app/)
-2. Select your preferred language (1-6 keys)
-3. Watch as AI-generated text begins scrolling
+2. Press any number key (1-6) to start auto-rotating text generation
+3. Watch as AI-generated text scrolls through English → Spanish → German every minute
 4. Press `P` to toggle ambient music
-5. Text automatically regenerates every 2 minutes
+5. Text automatically regenerates and rotates languages every minute
 
 ### Controls
 | Key | Action |
 |-----|--------|
-| `1` | English |
-| `2` | Español |
-| `3` | Français |
-| `4` | Deutsch |
-| `5` | Português |
-| `6` | Türkçe |
+| `1-6` | Start auto-rotation (any number key) |
 | `P` | Toggle Music |
 | `Space` | Restart Generation |
+
+**Auto-Rotation Cycle:**
+- **Minute 1**: English
+- **Minute 2**: Español  
+- **Minute 3**: Deutsch
+- **Minute 4**: English (cycle repeats)
 
 ## Aesthetic Influences
 
@@ -147,7 +149,7 @@ npm run build
 ├── sketch.js           # Main p5.js application logic
 ├── style.css           # Responsive styling
 ├── public/
-│   └── sample.mp3      # Ambient audio file
+│   └── Dark.wav        # Ambient audio file
 └── package.json        # Dependencies and scripts
 ```
 
